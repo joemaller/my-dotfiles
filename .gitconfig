@@ -1,0 +1,9 @@
+[user]
+	name = Joe Maller
+	email = not@myrealemail.com
+
+[push]
+	followTags = true
+
+[pager]
+	branch = false
