@@ -1,9 +1,55 @@
 [user]
 	name = Joe Maller
-	email = not@myrealemail.com
-
+	email = joe@joemaller.com
+[color]
+	diff = auto
+	status = auto
+	branch = auto
+	ui = auto
+[branch]
+	autosetupmerge = true
+[core]
+	excludesfile = /Users/joe/.gitignore_global
+	ignorecase = false
+[credential]
+	helper = osxkeychain
+[difftool "sourcetree"]
+[mergetool "sourcetree"]
+	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
 [push]
+	default = simple
 	followTags = true
-
+[difftool "sourcetree"]
+	cmd = /usr/local/bin/ksdiff -w \"$LOCAL\" \"$REMOTE\"
+	path = 
+[difftool "Kaleidoscope"]
+[mergetool "Kaleidoscope"]
+[diff]
+[difftool]
+[mergetool]
+	prompt = false
+[merge]
+	tool = Kaleidoscope
+[filter "media"]
+	clean = git-media-clean %f
+	smudge = git-media-smudge %f
+[mergetool "Kaleidoscope"]
+	cmd = ksdiff --merge --output \"$MERGED\" --base \"$BASE\" -- \"$LOCAL\" --snapshot \"$REMOTE\" --snapshot
+	trustexitcode = true
+[difftool "Kaleidoscope"]
+	cmd = ksdiff --partial-changeset --relative-path \"$MERGED\" -- \"$LOCAL\" \"$REMOTE\"
+[difftool]
+	prompt = false
+[diff]
+	tool = Kaleidoscope
+[mergetool "Kaleidoscope"]
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
 [pager]
 	branch = false
+[receive]
+	denyCurrentBranch = updateInstead
