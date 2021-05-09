@@ -107,3 +107,9 @@ POWERLEVEL9K_VCS_GIT_ICON='\uE1AA'
 
 # Add GRC colorizer
 [[ -s "/etc/grc.zsh" ]] && source /etc/grc.zsh
+export PATH="/usr/local/sbin:$PATH"
+
+# Setup dotfile via masked Git. More info here:
+# https://www.atlassian.com/git/tutorials/dotfiles
+alias config='/usr/local/bin/git --git-dir=$HOME/.my-dotfiles --work-tree=$HOME'
+
