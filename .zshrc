@@ -111,5 +111,5 @@ export PATH="/usr/local/sbin:$PATH"
 
 # Setup dotfile via masked Git. More info here:
 # https://www.atlassian.com/git/tutorials/dotfiles
-alias config='/usr/local/bin/git --git-dir=$HOME/.my-dotfiles --work-tree=$HOME'
+alias config='$(which git) --git-dir=$HOME/.my-dotfiles --work-tree=$HOME'
 
